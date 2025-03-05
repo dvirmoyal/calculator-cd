@@ -1,0 +1,13 @@
+apiVersion: v2
+name: calculator-services
+description: Helm chart for Calculator Microservices
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+dependencies:
+  - name: addition-service
+    version: 0.1.0
+    repository: "file://charts/addition-service"
+  - name: multiplication-service
+    version: 0.1.0
+    repository: "file://charts/multiplication-service"

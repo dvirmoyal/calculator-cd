@@ -1,0 +1,5 @@
+global:
+  namespace: calculator
+  pullPolicy: Always
+  nodePort:
+    enabled: true
