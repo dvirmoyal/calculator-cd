@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-multiplication-config
+  labels:
+    app: multiplication-service
+    chart: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+data:
+  application.properties: |
+    # יצירת הגדרות מוכנסות עבור שירות Java
+    server.port=8080
+    spring.application.name=calculator-java-service
+    logging.level.root=INFO
+    logging.level.com.calculator.service=DEBUG
+    
+    # הגדרות CORS 
+    {{- range .Values.cors.allowedOrigins }}
+    cors.allowed-origins={{ . }}
+    {{- end }}

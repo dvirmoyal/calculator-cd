@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-addition
+  name: {{ .Release.Name }}-multiplication
   labels:
-    app: addition-service
+    app: multiplication-service
     chart: {{ .Chart.Name }}
     release: {{ .Release.Name }}
 spec:
@@ -17,5 +17,5 @@ spec:
       nodePort: {{ .Values.service.nodePort }}
       {{- end }}
   selector:
-    app: addition-service
+    app: multiplication-service
     release: {{ .Release.Name }}
